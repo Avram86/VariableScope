@@ -6,7 +6,11 @@ namespace VariableScope
     {
         static void Main(string[] args)
         {
-            BlockScope();
+            int y = 10;
+
+            //BlockScope();
+            FunctionScope(y);
+            Console.WriteLine(y);
         }
         private static void BlockScope()
         {
@@ -41,5 +45,33 @@ namespace VariableScope
                 Console.WriteLine(k);
             }
         } 
+
+        private static void FunctionScope(int y)
+        {
+            //this is a function scope variable
+            int x = 20;
+            Console.WriteLine("x="+x);
+
+            Console.WriteLine("y="+y);
+            y = 20;
+            Console.WriteLine(y);
+
+            if (true)
+            {
+                //z is a block scope variable
+                int z = 30;
+                Console.WriteLine(z);
+
+                if (true)
+                {
+                    Console.WriteLine(x);
+                    Console.WriteLine(y);
+                }
+            }
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+
+            
+        }
     }
 }
