@@ -33,6 +33,13 @@ namespace VariableScope
             {
                // .....
             }
+
+            Console.WriteLine("-----------------------------------");
+
+            for (int k=0;k<3;k++)
+            {
+                Console.WriteLine(k);
+            }
         } 
     }
 }
